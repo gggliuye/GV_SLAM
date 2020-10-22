@@ -6,7 +6,7 @@
 Welcome to MAYA-SLAM's documentation!
 ===================================
 
-`MAYA-SLAM <MAYA-SLAM.readthedocs.io>`_
+`MAYA-SLAM <maya-slam.readthedocs.io>`_
 
 **Motivation**
 
