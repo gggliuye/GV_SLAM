@@ -24,4 +24,4 @@ SuperPixel
    :caption: Contents:
 
    GraphBased
-   SLIC
+   GardientAscent
