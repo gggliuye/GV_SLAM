@@ -9,6 +9,6 @@ is the pixel color vector in CIELAB color space and xy is the pixel position.
 
 This `paper <https://www.iro.umontreal.ca/~mignotte/IFT6150/Articles/SLIC_Superpixels.pdf>`_ made a comparsion of different super pixel methods.
 
-.. image:: images/sp_compare.png
+.. image:: images/sp_compare.PNG
    :align: center
    :width: 80%
