@@ -18,6 +18,8 @@ This `paper <https://www.iro.umontreal.ca/~mignotte/IFT6150/Articles/SLIC_Superp
    :align: center
    :width: 80%
 
+`Fast implementation <https://github.com/Algy/fast-slic>`_ , with `paper <https://github.com/Algy/fast-slic/files/4009304/fastslic.pdf>`_
+
 1.1 Distance Measure
 ---------------
 
@@ -28,11 +30,6 @@ This `paper <https://www.iro.umontreal.ca/~mignotte/IFT6150/Articles/SLIC_Superp
   &D_{s} = d_{lab} + m \frac{d_{xy}}{\sqrt{N/K}}
   \end{align*}
 
-.. math::
-  d_{xy} = \| v_{xy,1} - v_{xy,2} \|_{2}
-
-.. math::
-  D_{s} = d_{lab} + m \frac{d_{xy}}{\sqrt{N/K}}
 
 where N is the number of pixels in the image, and K the number of desired clusters. The N K term serves as a normalization for pixel distance.
 
