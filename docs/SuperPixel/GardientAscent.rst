@@ -18,7 +18,9 @@ This `paper <https://www.iro.umontreal.ca/~mignotte/IFT6150/Articles/SLIC_Superp
    :align: center
    :width: 80%
 
-`Fast implementation <https://github.com/Algy/fast-slic>`_ , with `paper <https://github.com/Algy/fast-slic/files/4009304/fastslic.pdf>`_
+
+* `Fast implementation <https://github.com/Algy/fast-slic>`_ , with `paper <https://github.com/Algy/fast-slic/files/4009304/fastslic.pdf>`_ , offers a C++ version with lots of hardware acceleration.
+* `Simple python implementation <https://github.com/laixintao/slic-python-implementation>`_ for better understand the algorithm.
 
 1.1 Distance Measure
 ---------------
