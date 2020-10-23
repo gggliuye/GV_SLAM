@@ -22,12 +22,12 @@ While, if any one see the image below (with superpixel), he understand it almost
 [Superpixel Technische Universitat Chemnitz](https://www.tu-chemnitz.de/etit/proaut/en/research/superpixel.html) 2015.
 [Application](https://www.tu-chemnitz.de/etit/proaut/en/research/changeprediction.html) in a winter-summer localization task.
 
-* SEEDS
-[SEEDS: Superpixels Extracted via Energy-Driven Sampling](https://arxiv.org/abs/1309.3848).
 
 .. toctree::
    :maxdepth: 3
    :caption: Contents:
 
    GraphBased
-   GardientAscent
+   Grow
+   Moveboundaries
+   EnergyMaximization

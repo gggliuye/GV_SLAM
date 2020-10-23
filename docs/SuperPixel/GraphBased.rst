@@ -5,10 +5,13 @@ Each pixel is treated as a node in a graph, and edge weight between nodes are se
 between pixels (normally, pixel distances and color differences.). Graph could be built based on grid sample, or KNN, etc.
 Finally, the superpixel segments are extracted by effectively minimizing a cost function defined on the graph.
 
+1. Felzenszwalb's
+---------------------------
+
 `My implementation <https://github.com/gggliuye/graph_based_image_segmentation>`_ based on
 *Efficient graph-based image segmentation 2004*
 
-`Link <https://vio.readthedocs.io/zh_CN/latest/Other/PGM.html>`_ to my documentation about PGM segmentation.
+`Paper <http://people.cs.uchicago.edu/~pff/papers/seg-ijcv.pdf>`_ and `Link <https://vio.readthedocs.io/zh_CN/latest/Other/PGM.html>`_ to my documentation about PGM segmentation.
 
 .. image:: images/allresults.jpg
    :align: center

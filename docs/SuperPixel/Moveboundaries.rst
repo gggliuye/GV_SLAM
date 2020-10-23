@@ -1,11 +1,11 @@
-Gardient Ascent
+Move boundaries
 ==================
 
-Starting from an inital rough clustering, during each iteration gradient ascnet mehtods refine
+Gardient Ascent : Starting from an inital rough clustering, during each iteration gradient ascnet methods refine
 the clusters from the previous iteration to obatin better segmentation until convergence.
 
-SLIC
-==================
+1. SLIC
+-----------------
 
 **SLIC (Simple Linear Iterative Clustering)** (2010) :
 This algorithm generates superpixels by clustering pixels based on their color similarity and
@@ -23,7 +23,7 @@ This `paper <https://www.iro.umontreal.ca/~mignotte/IFT6150/Articles/SLIC_Superp
 * `Simple python implementation <https://github.com/laixintao/slic-python-implementation>`_ for better understand the algorithm.
 
 1.1 Distance Measure
----------------
+~~~~~~~~~~~~~~~~~~
 
 .. math::
   \begin{align*}
@@ -36,7 +36,7 @@ This `paper <https://www.iro.umontreal.ca/~mignotte/IFT6150/Articles/SLIC_Superp
 where N is the number of pixels in the image, and K the number of desired clusters. The N K term serves as a normalization for pixel distance.
 
 1.2 Algorithm
------------------
+~~~~~~~~~~~~~~~~~~
 
 Image gardient computed as :
 
@@ -48,3 +48,10 @@ The algorithm is a sepcial case of K-means adapted to the task.
 .. image:: images/SLIC.PNG
    :align: center
    :width: 80%
+
+
+2. SEEDS
+---------------------
+
+`SEEDS: Superpixels Extracted via Energy-Driven Sampling <https://arxiv.org/abs/1309.3848>`_ refine a
+initial segments by iteratively exchanging pixels between neighboring superpixels.
