@@ -43,6 +43,8 @@ Image gardient computed as :
 .. math::
   G(x,y) = \|I(x+1, y) - I(x-1,y)\|^{2} + \|I(x, y+1) - I(x,y-1)\|^{2}
 
+While this gradients' calculation are only used in the initialization stage, for getting a better initial superpixel center.
+
 The algorithm is a sepcial case of K-means adapted to the task.
 
 .. image:: images/SLIC.PNG
