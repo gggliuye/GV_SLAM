@@ -59,3 +59,7 @@ The algorithm is a sepcial case of K-means adapted to the task.
 initial segments by iteratively exchanging pixels between neighboring superpixels.
 `project page <http://www.mvdblive.org/seeds/>`_ , `revised version <https://github.com/davidstutz/seeds-revised>`_ .
 See more about it implementation in the next chapter.
+
+.. image:: images/seeds.PNG
+   :align: center
+   :width: 30%
