@@ -42,3 +42,4 @@ Markov chain that is irreducible, aperiodic and positive recurrent has a station
 the entropy rate is independent of the initial distribution.
 
 2.2 Monotone & Submodularity
+~~~~~~~~~~~~~~~~~
