@@ -57,5 +57,5 @@ The algorithm is a sepcial case of K-means adapted to the task.
 
 `SEEDS: Superpixels Extracted via Energy-Driven Sampling <https://arxiv.org/abs/1309.3848>`_ refine a
 initial segments by iteratively exchanging pixels between neighboring superpixels.
-`revised <https://davidstutz.de/efficient-high-quality-superpixels-seeds-revised/>`_ .
+`project page <http://www.mvdblive.org/seeds/>`_ , `revised version <https://github.com/davidstutz/seeds-revised>`_ .
 See more about it implementation in the next chapter.
