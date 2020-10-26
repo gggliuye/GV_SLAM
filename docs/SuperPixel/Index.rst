@@ -22,6 +22,8 @@ While, if any one see the image below (with superpixel), he understand it almost
 [Superpixel Technische Universitat Chemnitz](https://www.tu-chemnitz.de/etit/proaut/en/research/superpixel.html) 2015.
 [Application](https://www.tu-chemnitz.de/etit/proaut/en/research/changeprediction.html) in a winter-summer localization task.
 
+* `SuperPixel Lattices <https://core.ac.uk/download/pdf/23797526.pdf>`_ 
+
 
 .. toctree::
    :maxdepth: 3
