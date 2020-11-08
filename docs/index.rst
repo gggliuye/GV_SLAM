@@ -24,6 +24,7 @@ Welcome to MAYA-SLAM's documentation!
    :caption: Contents:
 
    SuperPixel/Index
+   IMU/Index
 
 
 Indices and tables
