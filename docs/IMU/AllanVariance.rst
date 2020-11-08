@@ -3,10 +3,6 @@ Allan Variance
 
 `Statistics of Atomic Frequency Standards <http://tf.nist.gov/general/pdf/7.pdf>`_ by David W.Allan.
 
-`Power Spectral Density of Brownian motion despite non-stationary <https://dsp.stackexchange.com/questions/45574/power-spectral-density-of-brownian-motion-despite-non-stationary>`_
-
-`Mean and Covariance of Wiener Process <https://math.stackexchange.com/questions/568391/mean-and-covariance-of-wiener-process>`_
-
 1. Pre-request
 -------------------------
 
@@ -50,8 +46,8 @@ fourier transformation in an interval [0,T] (or [-N, N]) to get the formule of P
 
 .. math::
   \begin{align}
-  \hat{x}(f) &= \frac{1}{\sqrt{T}}\sum_{0}^{T}x(t)e^{-i\ft} \\
-  &= \frac{1}{\sqrt{2N+1}}\sum_{-N}^{N}x(t)e^{-i\ft}
+  \hat{x}(f) &= \frac{1}{\sqrt{T}}\sum_{0}^{T}x(t)e^{-ift} \\
+  &= \frac{1}{\sqrt{2N+1}}\sum_{-N}^{N}x(t)e^{-ift}
   \end{align}
 
 .. math::
@@ -72,8 +68,8 @@ the autocorrelation function, i.e. :
 .. math::
   \begin{align}
   S_{x}(f) &= \lim_{N\to \infty}\mathbf{E}[\mid \hat{x}(f)\mid^{2}] \\
-  &= \lim_{N\to \infty}\frac{1}{2N+1}\mathbf{E}[\sum_{t_{1}=-N}^{N}\sum_{t_{2}=-N}^{N}x(t_{1})x(t_{2})e^{-i\f(t_{1}-t_{2})} ]\\
-  &= \lim_{N\to \infty}\frac{1}{2N+1}\sum_{t_{1}=-N}^{N}\sum_{t_{2}=-N}^{N}\mathbf{E}[x(t_{1})x(t_{2})]e^{-i\f(t_{1}-t_{2})}
+  &= \lim_{N\to \infty}\frac{1}{2N+1}\mathbf{E}[\sum_{t_{1}=-N}^{N}\sum_{t_{2}=-N}^{N}x(t_{1})x(t_{2})e^{-if(t_{1}-t_{2})} ]\\
+  &= \lim_{N\to \infty}\frac{1}{2N+1}\sum_{t_{1}=-N}^{N}\sum_{t_{2}=-N}^{N}\mathbf{E}[x(t_{1})x(t_{2})]e^{-if(t_{1}-t_{2})}
   \end{align}
 
 With definition of R:
@@ -89,6 +85,28 @@ Apply the upper expression:
 
 .. math::
   \begin{align}
-  S_{x}(f) &= \lim_{N\to \infty}\frac{1}{2N+1}\sum_{t_{1}=-N}^{N}\sum_{t_{2}=-N}^{N}R_{xx}(t_{1} - t_{2})e^{-i\f(t_{1}-t_{2})} \\
-  &= \lim_{N\to \infty}\frac{1}{2N+1}\sum_{t_{1}=-N}^{N} \lim_{M\to \infty}\sum_{t_{2}=-M}^{M}R_{xx}(t_{1} - t_{2})e^{-i\f(t_{1}-t_{2})}
+  S_{x}(f) &= \lim_{N\to \infty}\frac{1}{2N+1}\sum_{t_{1}=-N}^{N}\sum_{t_{2}=-N}^{N}R_{xx}(t_{1} - t_{2})e^{-if(t_{1}-t_{2})} \\
+  &= \lim_{N\to \infty}\frac{1}{2N+1}\sum_{t_{1}=-N}^{N} \lim_{M\to \infty}\sum_{t_{2}=-M}^{M}R_{xx}(t_{1} - t_{2})e^{-if(t_{1}-t_{2})} \\
+  &= \lim_{N\to \infty}\frac{1}{2N+1}(\sum_{t_{1}=-N}^{N}) \sum_{k=-\infty}^{\infty}R_{xx}(k)e^{-ifk} \\
+  &= \sum_{k=-\infty}^{\infty}R_{xx}(k)e^{-ifk}
   \end{align}
+
+4. White Noise
+-----------------------
+Consider random white noise with magnitude N:
+
+.. math::
+  <\si(t_{1}), \si(t_{2})> = N^{2}\delta(t_{1} - t_{2})
+
+.. math::
+  S_{\si}(f) = \mathbf{FT}[R_{\si\si}(t)] = N^{2}
+
+5. Brownian Noise
+-----------------
+
+Mean and covariance could be seen here : `Mean and Covariance of Wiener Process <https://math.stackexchange.com/questions/568391/mean-and-covariance-of-wiener-process>`_
+
+And the derivative of PSD could be found in this post : `Power Spectral Density of Brownian motion despite non-stationary <https://dsp.stackexchange.com/questions/45574/power-spectral-density-of-brownian-motion-despite-non-stationary>`_
+
+6. Flicker Noise
+------------------
