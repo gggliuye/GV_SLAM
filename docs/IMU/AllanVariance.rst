@@ -7,8 +7,24 @@ Allan Variance
 
 `Mean and Covariance of Wiener Process <https://math.stackexchange.com/questions/568391/mean-and-covariance-of-wiener-process>`_
 
+1. Pre-request
+-------------------------
 
-1. Power Spectral Density
+**Fourier Transform of Constant function** (for an example x(t) = N):
+
+.. math::
+  \begin{align}
+  \mathbf{FT}(N) &= \int_{-\infty}^{\infty}N e^{-2\pi i ft}dt \\
+  &= \int_{-\infty}^{\infty}N (cos(2\pi ft)-isin(2\pi ft))dt\\
+  &= N\int_{-\infty}^{\infty}cos(2\pi ft)dt \\
+  &= N\delta(f)
+  \end{align}
+
+The cos function is an oscillation, so if f is not zero, the upper integration will be zero.
+If we take the inverse fourier transform of Delta function, we will get constant.
+
+
+2. Power Spectral Density
 -------------------------
 
 **Definition** Power Spectral Density (PSD) of a time series x(t) describes the distribution of power into frequency components
@@ -27,4 +43,52 @@ magnitude of frequence. And we can further derivate the expression:
   \begin{align}
   S_{x}(f) &= \int_{t_{1}=-\infty}^{\infty}e^{-2\pi i ft_{1}}x(t_{1})dt_{1}\int_{t_{2}=-\infty}^{\infty}e^{2\pi i ft_{2}}x(t_{2})dt_{2}\\
   &= \int_{t_{1}=-\infty}^{\infty}\int_{t_{2}=-\infty}^{\infty}e^{-2\pi i f(t_{1}-t_{2})}x(t_{1})x(t_{2})dt_{1}dt_{2}
+  \end{align}
+
+**Special functions**, for some functions, their fourier transformation may not formlly exist. So we will work with a truncated
+fourier transformation in an interval [0,T] (or [-N, N]) to get the formule of Power Spectral Density :
+
+.. math::
+  \begin{align}
+  \hat{x}(f) &= \frac{1}{\sqrt{T}}\sum_{0}^{T}x(t)e^{-i\ft} \\
+  &= \frac{1}{\sqrt{2N+1}}\sum_{-N}^{N}x(t)e^{-i\ft}
+  \end{align}
+
+.. math::
+  S_{x}(f) = \lim_{T\to \infty}\mathbf{E}[\mid \hat{x}(f)\mid^{2}]
+
+
+3. Wiener-Khirchin Theorem
+--------------------------
+
+**Wiener-Khirchin Theorem** For a well behaveral stationary random process the power spectrum is equal to the fourier transform of
+the autocorrelation function, i.e. :
+
+.. math::
+  S_{x}(f) = \sum_{t= -\infty}^{\infty}R_{xx}(t)e^{-ift}
+
+**Proof**:
+
+.. math::
+  \begin{align}
+  S_{x}(f) &= \lim_{N\to \infty}\mathbf{E}[\mid \hat{x}(f)\mid^{2}] \\
+  &= \lim_{N\to \infty}\frac{1}{2N+1}\mathbf{E}[\sum_{t_{1}=-N}^{N}\sum_{t_{2}=-N}^{N}x(t_{1})x(t_{2})e^{-i\f(t_{1}-t_{2})} ]\\
+  &= \lim_{N\to \infty}\frac{1}{2N+1}\sum_{t_{1}=-N}^{N}\sum_{t_{2}=-N}^{N}\mathbf{E}[x(t_{1})x(t_{2})]e^{-i\f(t_{1}-t_{2})}
+  \end{align}
+
+With definition of R:
+
+.. math::
+  \begin{align}
+  \mathbf{E}[x(t_{1})x(t_{2})] &= <x(t_{1}), x(t_{2})>\\
+  &= <x(t_{2} + (t_{1} - t_{2})), x(t_{2})> \\
+  &= R_{xx}(t_{1} - t_{2})
+  \end{align}
+
+Apply the upper expression:
+
+.. math::
+  \begin{align}
+  S_{x}(f) &= \lim_{N\to \infty}\frac{1}{2N+1}\sum_{t_{1}=-N}^{N}\sum_{t_{2}=-N}^{N}R_{xx}(t_{1} - t_{2})e^{-i\f(t_{1}-t_{2})} \\
+  &= \lim_{N\to \infty}\frac{1}{2N+1}\sum_{t_{1}=-N}^{N} \lim_{M\to \infty}\sum_{t_{2}=-M}^{M}R_{xx}(t_{1} - t_{2})e^{-i\f(t_{1}-t_{2})}
   \end{align}
