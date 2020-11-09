@@ -96,12 +96,12 @@ Apply the upper expression:
 Consider random white noise :math:`\xi(t)` with magnitude N, with two-correlation function :
 
 .. math::
-  <\si(t_{1}), \si(t_{2})> = N^{2}\delta(t_{1} - t_{2})
+  <\xi(t_{1}), \xi(t_{2})> = N^{2}\delta(t_{1} - t_{2})
 
 Applying Wiener-Khintchine theorem:
 
 .. math::
-  S_{\xi}(f) = \mathbf{FT}[R_{\xi\xi}(t)] = \int e^{2\pi i ft}N^{2}<\si(t), \si(0)>dt = N^{2}
+  S_{\xi}(f) = \mathbf{FT}[R_{\xi\xi}(t)] = \int e^{2\pi i ft}N^{2}<\xi(t), \xi(0)>dt = N^{2}
 
 5. Brownian Noise
 -----------------
@@ -135,4 +135,3 @@ And the derivative of PSD could be found in this post : `Power Spectral Density 
 
 .. image:: images/allan.png
    :align: center
-   :width: 90%
