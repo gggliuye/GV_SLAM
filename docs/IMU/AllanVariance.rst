@@ -93,20 +93,46 @@ Apply the upper expression:
 
 4. White Noise
 -----------------------
-Consider random white noise with magnitude N:
+Consider random white noise :math:`\xi(t)` with magnitude N, with two-correlation function :
 
 .. math::
   <\si(t_{1}), \si(t_{2})> = N^{2}\delta(t_{1} - t_{2})
 
+Applying Wiener-Khintchine theorem:
+
 .. math::
-  S_{\si}(f) = \mathbf{FT}[R_{\si\si}(t)] = N^{2}
+  S_{\xi}(f) = \mathbf{FT}[R_{\xi\xi}(t)] = \int e^{2\pi i ft}N^{2}<\si(t), \si(0)>dt = N^{2}
 
 5. Brownian Noise
 -----------------
 
+.. math::
+  W(t) = \int_{0}^{t}K\xi(t)dt
+
 Mean and covariance could be seen here : `Mean and Covariance of Wiener Process <https://math.stackexchange.com/questions/568391/mean-and-covariance-of-wiener-process>`_
+
+.. math::
+  \mathbf{E}[W(t)] = 0
+
+.. math::
+  Var(W) = \mathbf{E}[(W(t) - \mathbf{E}[W(t)])^{2}] = \mathbf{E}[(W(t)^{2}] = K^{2}t
+
+.. math::
+  <W(t_{1}), W(t_{2})> = min(t_{1}, t_{2})
 
 And the derivative of PSD could be found in this post : `Power Spectral Density of Brownian motion despite non-stationary <https://dsp.stackexchange.com/questions/45574/power-spectral-density-of-brownian-motion-despite-non-stationary>`_
 
+.. math::
+  S_{W(t)}(f) = (\frac{K}{2\pi})^2\frac{1}{f^2}
+
 6. Flicker Noise
 ------------------
+
+7. Implementation
+---------------------
+
+`My Implementation Python <https://github.com/gggliuye/VINS_PI/blob/main/IMU/IMU_Allan_Calibration.ipynb>`_
+
+.. image:: images/allan.png
+   :align: center
+   :width: 90%
